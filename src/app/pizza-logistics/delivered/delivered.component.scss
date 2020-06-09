@@ -1,0 +1,30 @@
+mat-card {
+    max-width: 100%;
+    margin: 0 5% 0 5%;
+    mat-card-header {
+      background: orange;
+      padding: 20px 0 0 5px;
+      font-size: 20px;
+      font-family: sans-serif;
+      mat-card-title {
+        font-weight: bold;
+        color: #ffffff;
+      }
+    }
+    mat-card-content {
+      background-color: white;
+      padding: 20px;
+      mat-list {
+        width: 100%;
+        .order-number {
+          width: 20%;
+        }
+        .order-toppings {
+          width: 60%;
+        }
+        .order-button {
+          width: 20%;
+        }
+      }
+    }
+  }

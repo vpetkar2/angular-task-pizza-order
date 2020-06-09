@@ -1,0 +1,24 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>Ready For Delivery</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <mat-list>
+            <mat-list-item *ngFor="let order of orders">
+                <span class="order-number"> {{order.id | number:'3.0'}} </span>
+                <span class="order-toppings"> 
+                    <mat-form-field>
+                        <mat-select #driverId>
+                            <mat-option *ngFor="let driver of drivers" [value]="driver.id">
+                            {{driver.firstName+' '+driver.lastName}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </span>
+                <span class="order-button"> 
+                    <button type="button" mat-raised-button color="warn" (click)="assign(order, driverId);">Assign</button>
+                </span>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>

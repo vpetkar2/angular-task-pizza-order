@@ -1,0 +1,30 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>New Order</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <form [formGroup]="orderForm">
+            <mat-form-field>
+              <mat-label>Customer Name</mat-label>
+              <input matInput placeholder="Customer Name" formControlName="name">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Toppings</mat-label>
+                <mat-select formControlName="toppings" multiple>
+                  <mat-option *ngFor="let topp of toppings" [value]="topp.id">
+                    {{topp.name}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Size</mat-label>
+                <mat-select formControlName="size">
+                  <mat-option *ngFor="let size of [1,2,3,4,5]" [value]="size">
+                    {{size}}
+                  </mat-option>
+                </mat-select>
+            </mat-form-field>
+            <button type="button" mat-raised-button color="warn" (click)="placeOrder();">Submit</button>
+        </form>
+    </mat-card-content>
+</mat-card>
